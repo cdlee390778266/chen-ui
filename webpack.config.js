@@ -6,8 +6,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'), 
     publicPath: '/dist/',
-    filename: 'my-vue-plugin.js',
-    library: 'MyVuePluin',
+    filename: 'chen-ui.js',
+    library: 'chenUi',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

@@ -1,14 +1,14 @@
 {
-  "name": "my-vue-plugin-ji",
-  "description": "myVuePlugin",
+  "name": "chen-ui",
+  "description": "chenUi",
   "version": "1.0.0",
   "author": "lee <390778266@qq.com>",
   "license": "MIT",
   "private": false,
-  "main": "dist/my-vue-plugin.js",
+  "main": "dist/chen-ui.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdlee390778266/my-vue-plugin.git"
+    "url": "https://github.com/cdlee390778266/chen-ui.git"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
@@ -31,6 +31,7 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
     "node-sass": "^4.5.3",
+    "prettier": "^1.12.1",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",

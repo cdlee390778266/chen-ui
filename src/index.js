@@ -1,7 +1,7 @@
-import Test from './lib/test/index.js';
+import Loading from './lib/loading/index.js';
 
 const components = [
-	Test
+	Loading
 ]
 
 const install = function(Vue, options) {
@@ -17,5 +17,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
 	install,
-	Test
+	Loading
 };

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-
-    <test></test>
+    dfasfdasfdasf
+    <loading></loading>
   </div>
 </template>
 
@@ -15,18 +15,7 @@ export default {
   },
   data() {
     return {
-      value: [],
-      treeData: [
-        {
-          value: 1,
-          label: 'text1',
-          children: [{ value: 5, label: 'text5' }, { value: 6, label: 'text6' }]
-        },
-        { value: 2, label: 'text2' },
-        { value: 3, label: 'text3' },
-        { value: 4, label: 'text5' }
-      ],
-      disabledValues: [3]
+      value: []
     }
   },
   created() {

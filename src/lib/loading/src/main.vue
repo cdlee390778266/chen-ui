@@ -1,0 +1,75 @@
+<template>
+  <div class="full">
+    <div class="loading-mask"></div>
+    <div class="loading"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'loading',
+  data() {
+    return {
+      
+    }
+  },
+  created() {
+
+  }
+}
+</script>
+<style scoped lang="scss">
+.full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.loading-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+  z-index: 9999;
+}
+.loading{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  width:30px;
+  height:30px;
+  margin-left: -15px;
+  margin-top: -15px;
+  background:#3498db;
+  border-radius:50px;
+  animation: preloader_5 1.5s infinite linear;
+  z-index: 10000;
+}
+.loading:after{
+  position:absolute;
+  width:50px;
+  height:50px;
+  border-top:10px solid #9b59b6;
+  border-bottom:10px solid #9b59b6;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-radius:50px;
+  content:'';
+  top:-20px;
+  left:-20px;
+  animation: preloader_5_after 1.5s infinite linear;
+}
+@keyframes preloader_5 {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);background:#2ecc71;}
+  100% {transform: rotate(360deg);}
+}
+@keyframes preloader_5_after {
+  0% {border-top:10px solid #9b59b6;border-bottom:10px solid #9b59b6;}
+  50% {border-top:10px solid #3498db;border-bottom:10px solid #3498db;}
+  100% {border-top:10px solid #9b59b6;border-bottom:10px solid #9b59b6;}
+}
+</style>

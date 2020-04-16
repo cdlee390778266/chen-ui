@@ -1,0 +1,62 @@
+@import 'variable';
+@each $space in $spaceList {
+  .mgt#{$space} {
+    margin-top: #{$space}px;
+  }
+  .mgr#{$space} {
+    margin-right: #{$space}px;
+  }
+  .mgb#{$space} {
+    margin-bottom: #{$space}px;
+  }
+  .mgl#{$space} {
+    margin-left: #{$space}px;
+  }
+  .mgtb#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+  .mglr#{$space} {
+    margin-left: #{$space}px;
+    margin-right: #{$space}px;
+  }
+  .pdt#{$space} {
+    padding-top: #{$space}px;
+  }
+  .pdr#{$space} {
+    padding-right: #{$space}px;
+  }
+  .pdb#{$space} {
+    padding-bottom: #{$space}px;
+  }
+  .pdl#{$space} {
+    padding-left: #{$space}px;
+  }
+  .pdtb#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+  .pdlr#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+}
+.posRelative {
+  position: relative;
+}
+.full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}

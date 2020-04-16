@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    dfasfdasfdasf
-    <loading></loading>
+    eeeeeeeeeeeeeee
+    <div v-loading.fullscreen="visible" loading-text="这是测试这是测试这是测试这是测试这是测试这是测试"></div>
   </div>
 </template>
 
@@ -15,12 +15,16 @@ export default {
   },
   data() {
     return {
-      value: []
+      toggle: true,
+      visible: true
+    }
+  },
+  methods: {
+    toggleLoading() {
+      
     }
   },
   created() {
-
-    console.log(this.$el)
   }
 }
 </script>

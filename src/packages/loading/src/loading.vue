@@ -1,10 +1,13 @@
 <template>
   <div class="full" :class="[customClass]" v-show="visible">
-    <div class="loading-mask" v-if="mask" :style="{background}"></div>
-    <div class="loading" :class="{hasMask: mask}">
-      <div class="loading-icon"></div>
-      <div class="loading-text text-center mgt20" v-if="text">
-        {{text}}
+    <div class="loading-mask" v-if="!hideMask" :style="{background}"></div>
+    <div class="loading" :class="{hasMask: !hideMask}">
+      <div class="loading-content">
+        <div class="loading-icon" v-if="!loadingIconTemplate"></div>
+        <div v-else v-html="loadingIconTemplate"></div>
+        <div class="loading-text mgt20" v-if="text">
+          {{text}}
+        </div>
       </div>
     </div>
   </div>
@@ -17,9 +20,9 @@ export default {
     return {
       visible: false,
       fullscreen: false,
+      hideMask: false,
       lock: false,
-      mask: true,
-      spinner: '',
+      loadingIconTemplate: '',
       text: '',
       background: 'rgba(0, 0, 0, .8)',
       customClass: ''
@@ -28,6 +31,10 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.full {
+  display: flex;
+  align-items: center;
+}
 .loading-mask {
   position: absolute;
   top: 0;
@@ -38,39 +45,42 @@ export default {
   z-index: 9999;
 }
 .loading{
-  position:absolute;
-  left: 50%;
-  top: 50%;
-  max-width: 300px;
-  margin-left: -15px;
-  margin-top: -15px;
+  position:relative;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 10000;
-}
-.loading-icon {
-  position: relative;
-  width:30px;
-  height:30px;
-  background:#3498db;
-  border-radius:50px;
-  animation: preloader_5 1.5s infinite linear;
-}
-.loading-icon:after{
-  position:absolute;
-  width:50px;
-  height:50px;
-  border-top:10px solid #9b59b6;
-  border-bottom:10px solid #9b59b6;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  border-radius:50px;
-  content:'';
-  top:-20px;
-  left:-20px;
-  animation: preloader_5_after 1.5s infinite linear;
-}
-.hasMask {
-  .loading-text {
-    color: #fff;
+  .loading-content {
+    display: inline-block;
+    max-width: 280px;
+    text-align: center;
+    .loading-icon {
+      position: relative;
+      display: inline-block;
+      width:30px;
+      height:30px;
+      background:#3498db;
+      border-radius:50px;
+      animation: preloader_5 1.5s infinite linear;
+    }
+    .loading-icon:after{
+      position:absolute;
+      width:50px;
+      height:50px;
+      border-top:10px solid #9b59b6;
+      border-bottom:10px solid #9b59b6;
+      border-left:10px solid transparent;
+      border-right:10px solid transparent;
+      border-radius:50px;
+      content:'';
+      top:-20px;
+      left:-20px;
+      animation: preloader_5_after 1.5s infinite linear;
+    }
+  }
+  &.hasMask {
+    .loading-text {
+      color: #fff;
+    }
   }
 }
 @keyframes preloader_5 {

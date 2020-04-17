@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     eeeeeeeeeeeeeee
-    <div v-loading.fullscreen="visible" loading-text="这是测试这是测试这是测试这是测试这是测试这是测试"></div>
+    <div v-loading.fullscreen.lock="true" loading-text="这是测试这是测试这是测试这是测试这是测试这是测试"></div>
   </div>
 </template>
 

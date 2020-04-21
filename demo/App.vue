@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    eeeeeeeeeeeeeee
-    <div v-loading.fullscreen.lock="true" loading-text="这是测试这是测试这是测试这是测试这是测试这是测试"></div>
+    <div v-loading="true">
+      <p>1e</p>
+      <hello-world>fdsafasfdasf</hello-world>
+    </div>
   </div>
 </template>
 
@@ -29,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

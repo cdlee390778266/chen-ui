@@ -40,9 +40,10 @@ LoadingDrective.install = function(Vue, options) {
     }else {
       !el.targetDom && (el.targetDom = el);
       setStyle(el.targetDom, 'position', 'relative');
+      setStyle(el.targetDom, 'minHeight', '200px');
     }
 
-    if(data.lock) { //锁屏
+    if(data.lock && data.visible) { //锁屏
       setStyle(el.targetDom, 'overflow', 'hidden');
     }else {
       setStyle(el.targetDom, 'overflow', 'auto');

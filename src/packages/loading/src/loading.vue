@@ -5,7 +5,7 @@
       <div class="loading-content">
         <div class="loading-icon" v-if="!loadingIconTemplate"></div>
         <div v-else v-html="loadingIconTemplate"></div>
-        <div class="loading-text mgt20" v-if="text">
+        <div class="loading-text mgt5" v-if="text">
           {{text}}
         </div>
       </div>
@@ -41,7 +41,7 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(255, 255, 255, .8);
   z-index: 9999;
 }
 .loading{
@@ -56,41 +56,66 @@ export default {
     .loading-icon {
       position: relative;
       display: inline-block;
-      width:30px;
-      height:30px;
-      background:#3498db;
-      border-radius:50px;
-      animation: preloader_5 1.5s infinite linear;
-    }
-    .loading-icon:after{
-      position:absolute;
-      width:50px;
-      height:50px;
-      border-top:10px solid #9b59b6;
-      border-bottom:10px solid #9b59b6;
-      border-left:10px solid transparent;
-      border-right:10px solid transparent;
-      border-radius:50px;
-      content:'';
-      top:-20px;
-      left:-20px;
-      animation: preloader_5_after 1.5s infinite linear;
+      width: 2.5em;
+      height: 2.5em;
+      transform: rotate(165deg);
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 0.25em;
+        transform: translate(-50%, -50%);
+      }
+      &:before {
+        animation: before 2s infinite;
+      }
+      &:after {
+        animation: after 2s infinite;
+      }
     }
   }
   &.hasMask {
     .loading-text {
-      color: #fff;
+      color: #333;
     }
   }
 }
-@keyframes preloader_5 {
-  0% {transform: rotate(0deg);}
-  50% {transform: rotate(180deg);background:#2ecc71;}
-  100% {transform: rotate(360deg);}
+@keyframes before {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+  }
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  100% {
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
 }
-@keyframes preloader_5_after {
-  0% {border-top:10px solid #9b59b6;border-bottom:10px solid #9b59b6;}
-  50% {border-top:10px solid #3498db;border-bottom:10px solid #3498db;}
-  100% {border-top:10px solid #9b59b6;border-bottom:10px solid #9b59b6;}
+@keyframes after {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+  35% {
+    height: 2.5em;
+    box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+  }
+  70% {
+    height: 0.5em;
+    box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+  }
+  100% {
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
 }
 </style>
